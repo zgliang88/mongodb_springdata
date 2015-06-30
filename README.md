@@ -11,5 +11,5 @@ this is mongodb 3.0 mongo-client replace mongodb
 	max-wait-time="${mongo.maxWaitTime}"
 	socket-keep-alive="${mongo.socketKeepAlive}" 
 	socket-timeout="${mongo.socketTimeout}"/>
-</mongo:mongo-client>
+<//mongo:mongo-client>
 ]]>
