@@ -10,6 +10,6 @@ this is mongodb 3.0 mongo-client replace mongodb
 	connect-timeout="${mongo.connectTimeout}"
 	max-wait-time="${mongo.maxWaitTime}"
 	socket-keep-alive="${mongo.socketKeepAlive}" 
-	socket-timeout="${mongo.socketTimeout}" &gt;
-&lt;mongo:mongo-client &gt;
+	socket-timeout="${mongo.socketTimeout}" /&gt;
+&lt;/mongo:mongo-client &gt;
 </pre>
