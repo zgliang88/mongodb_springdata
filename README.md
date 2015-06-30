@@ -2,7 +2,7 @@
 mongodb 3.0&amp; spring_data_mongodb 1.7
 
 this is mongodb 3.0 mongo-client replace mongodb
-<mongo:mongo-client replace  id="mongo" replica-set="${mongo.hostport}" >
+<mongo:mongo-client replace  id="mongo" replica-set="${mongo.hostport}">
 		<mongo:client-options 
 			connections-per-host="${mongo.connectionsPerHost}"
 			
@@ -11,4 +11,4 @@ this is mongodb 3.0 mongo-client replace mongodb
 			max-wait-time="${mongo.maxWaitTime}"
 			socket-keep-alive="${mongo.socketKeepAlive}" 
 			socket-timeout="${mongo.socketTimeout}"/>
-	</mongo:mongo-client>
+</mongo:mongo-client>
