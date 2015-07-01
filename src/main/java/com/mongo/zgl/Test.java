@@ -5,7 +5,12 @@ import java.util.UUID;
 
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+/**
+ * 
+ * @author zhangguangliang
+ * @email zgliang88@163.com
+ * @date 2015年7月1日 下午12:02:49
+ */
 public class Test {
 	private static UserRepository userRepository;
 	static {

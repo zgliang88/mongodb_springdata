@@ -12,7 +12,12 @@ import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
 import com.mongodb.DB;
-
+/**
+ * 
+ * @author zhangguangliang
+ * @email zgliang88@163.com
+ * @date 2015年7月1日 下午1:18:05
+ */
 @Repository
 public class UserRepository {
 

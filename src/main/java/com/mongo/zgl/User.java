@@ -6,7 +6,12 @@ import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
-
+/**
+ * 
+ * @author zhangguangliang
+ * @email zgliang88@163.com
+ * @date 2015年7月1日 下午1:18:19
+ */
 @Document(collection = "user") 
 @CompoundIndexes({  
     @CompoundIndex(name = "birthday_idx", def = "{'name': 1, 'birthday': -1}")  
