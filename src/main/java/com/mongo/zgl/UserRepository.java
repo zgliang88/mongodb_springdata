@@ -2,10 +2,9 @@ package com.mongo.zgl;
 import java.util.List;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
-import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -19,14 +18,14 @@ public class UserRepository {
 
 	@Autowired
 	private MongoTemplate mongoTemplate;
-
+	Logger logger =LoggerFactory.getLogger(UserRepository.class);
 	public void test() {
 		Set<String> colls = this.mongoTemplate.getCollectionNames();
 		for (String coll : colls) {
 			System.out.println("CollectionName=" + coll);
 		}
 		DB db = this.mongoTemplate.getDb();
-		System.out.println("db=" + db.toString());
+		logger.debug("db=" + db.toString());
 	}
 
 	public void createCollection() {
@@ -37,9 +36,11 @@ public class UserRepository {
 
 	public List<User> findList(int skip, int limit) {
 		Query query = new Query();
-		query.with(new Sort(new Order(Direction.ASC, "id")));
+		//query.with(new Sort(new Order(Direction.ASC, "id")));
 		query.skip(skip).limit(limit);
-		return this.mongoTemplate.find(query, User.class);
+		List<User> find = this.mongoTemplate.find(query, User.class);
+		logger.debug(String.valueOf(find.size()));
+		return find;
 	}
 
 	public List<User> findListByName(String name) {
