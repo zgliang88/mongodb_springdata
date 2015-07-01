@@ -19,12 +19,12 @@
 			</list>
 		</property>
 	</bean>
-	
-	<context:annotation-config>
-		<list>
-			<value>classpath*:log4j.properties</value>
-		</list>
-	</context:annotation-config>
+	<!-- 这个不配置就会出现 _class key -->
+	<bean id="defaultMongoTypeMapper" class="org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper">
+		<constructor-arg name="typeKey">
+			<null /><!-- 这里设置为空,可以把 spring data mongodb 多余保存的_class字段去掉 -->
+		</constructor-arg>
+	</bean>
 	
 	<mongo:mongo-client id="mongo" replica-set="${mongo.hostport}" >
 		<mongo:client-options 
