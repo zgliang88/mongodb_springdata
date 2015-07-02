@@ -1,6 +1,8 @@
 package com.mongo.zgl;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.context.ConfigurableApplicationContext;
@@ -38,6 +40,19 @@ public class Test {
 		user.setBirthday(new Date());
 		userRepository.insert(user);
 	}
+	@org.junit.Test
+	public void batchInsert(){
+		List<User> users=new ArrayList<User>();
+		for(int i=0;i<1000;i++){
+			User user = new User();
+			user.setId(UUID.randomUUID().toString());
+			user.setName("jack"+i);
+			user.setBirthday(new Date());
+			users.add(user);
+		}
+		userRepository.batchInsert(users);
+	}
+	
 	@org.junit.Test
 	public void findUser(){
 		userRepository.findList(1, 10);

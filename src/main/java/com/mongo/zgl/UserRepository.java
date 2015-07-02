@@ -64,6 +64,10 @@ public class UserRepository {
 		this.mongoTemplate.insert(entity);
 
 	}
+	
+	public void batchInsert(List<User> users){
+		this.mongoTemplate.insert(users, User.class);
+	}
 
 	public void update(User entity) {
 		Query query = new Query();
